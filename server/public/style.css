@@ -1,0 +1,283 @@
+/*|_______________________________________________________________________________________________|*/
+/*|_______________________________________________________________________________________________|*/
+/*GLOBAL*//*GLOBAL*//*GLOBAL*//*GLOBAL*//*GLOBAL*//*GLOBAL*//*GLOBAL*/
+/*GLOBAL*//*GLOBAL*//*GLOBAL*//*GLOBAL*//*GLOBAL*//*GLOBAL*//*GLOBAL*/
+/*GLOBAL*//*GLOBAL*//*GLOBAL*//*GLOBAL*//*GLOBAL*//*GLOBAL*//*GLOBAL*/
+/*|_______________________________________________________________________________________________|*/
+/*|_______________________________________________________________________________________________|*/
+
+body {
+    font-family: 'Avenir', sans-serif;
+    font-size: 1.25rem;
+}
+
+h1 {
+    font-family: 'Carme', sans-serif;
+    font-size: 2rem;
+}
+
+h2 {
+    font-family: 'Avenir', sans-serif;
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-family: 'Avenir', sans-serif;
+    font-size: 1.2rem;
+}
+
+h3 {
+    font-family: 'Avenir', sans-serif;
+    font-size: 1.15rem;
+}
+
+.footnote, .caption, .breadcrumbs {
+    font-family: 'Avenir', sans-serif;
+    font-size: 0.65rem;
+}
+
+.breadcrumbs {
+    padding: 20px 0px 0px 0px;
+}
+
+.breadcrumbs a:hover {
+    cursor: pointer;
+}
+
+#active {
+    color: #FF8000;
+}
+
+/*|_______________________________________________________________________________________________|*/
+/*|_______________________________________________________________________________________________|*/
+/*NAVBAR*//*NAVBAR*//*NAVBAR*//*NAVBAR*//*NAVBAR*//*NAVBAR*//*NAVBAR*/
+/*NAVBAR*//*NAVBAR*//*NAVBAR*//*NAVBAR*//*NAVBAR*//*NAVBAR*//*NAVBAR*/
+/*NAVBAR*//*NAVBAR*//*NAVBAR*//*NAVBAR*//*NAVBAR*//*NAVBAR*//*NAVBAR*/
+/*|_______________________________________________________________________________________________|*/
+/*|_______________________________________________________________________________________________|*/
+
+.top-bar {
+    background-color: #131F3F;
+    color: white;
+    word-spacing: 0.30rem;
+}
+
+.top-bar p {
+    padding: 3% 0% 3% 0%;
+}
+
+.nav-logo img {
+    width: 50%;
+    margin-left: 20%;
+}
+
+.nav-bar {
+    display: flex;
+    background-color: white;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    margin-left: 5%;
+}
+
+.nav-links li {
+    font-size: 11px;
+    font-weight: bold;
+    display: inline;
+    padding: 10px;
+}
+
+.nav-links li:hover {
+    color: #FF8000;
+    cursor: pointer;
+}
+
+.nav-bttn {
+    border: 2px solid #FF8000;
+    height: 50px;
+    color: #FF8000;
+}
+
+#nav-bttn {
+    padding: 10px 25px 10px 25px;   
+}
+
+#nav-bttn:hover {
+    background-color: #FF8000;
+    color: white;
+    cursor: pointer;
+}
+
+
+/*|_______________________________________________________________________________________________|*/
+/*|_______________________________________________________________________________________________|*/
+/*COURSES*//*COURSES*//*COURSES*//*COURSES*//*COURSES*//*COURSES*/
+/*COURSES*//*COURSES*//*COURSES*//*COURSES*//*COURSES*//*COURSES*/
+/*COURSES*//*COURSES*//*COURSES*//*COURSES*//*COURSES*//*COURSES*/
+/*|_______________________________________________________________________________________________|*/
+/*|_______________________________________________________________________________________________|*/
+
+.hero-image {
+    position: relative;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.banner-image {
+    width: 100%;
+}
+
+.hero-image h1 {
+    position: absolute;
+    top: 15%;
+    color: white;
+    left: 5%;
+    text-transform: uppercase;
+}
+
+.hero-image p {
+    position: absolute;
+    top: 30%;
+    color: white;
+    left: 5%;
+    width: 50%;
+    text-align: left;
+}
+
+.hero-image .breadcrumbs {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    color: white;
+}
+
+
+/*|_______________________________________________________________________________________________|*/
+/*|_______________________________________________________________________________________________|*/
+/*COURSES*//*COURSES*//*COURSES*//*COURSES*//*COURSES*//*COURSES*//*COURSES*/
+/*COURSES*//*COURSES*//*COURSES*//*COURSES*//*COURSES*//*COURSES*//*COURSES*/
+/*COURSES*//*COURSES*//*COURSES*//*COURSES*//*COURSES*//*COURSES*//*COURSES*/
+/*|_______________________________________________________________________________________________|*/
+/*|_______________________________________________________________________________________________|*/
+
+#courses {
+    padding-top: 3%;
+    background-color: #E2E3E1;
+}
+
+#courses h1 {
+    margin-bottom: 3%;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.all-courses {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.single-course {
+    padding: 0px 0px 5px 0px;
+    width: 25%;
+    margin: 0% 3% 2% 4%;
+    background-color: white;
+    overflow: hidden;
+}
+
+.single-course img {
+    width: 100%;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.single-course:hover img {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+     transform: scale(1.1);
+}
+
+.course-date, .course-schedule {
+    font-size: 1rem;
+    padding: 4% 0% 1% 4%;
+}
+
+.course-title {
+    padding: 2% 4% 2% 4%;
+    color: #131F3F;
+}
+
+.enroll-button {
+    padding: 10px 25px 10px 25px;
+    height: 50px;
+    background-color: #131F3F;
+    text-transform: uppercase;
+    color: white;
+    font-family: 'Avenir';
+    font-weight: bold;
+    font-size: 15px;
+    margin: 5% 0% 0% 25%;
+}
+
+.enroll-button:hover {
+    cursor: pointer;
+}
+
+
+/*|_______________________________________________________________________________________________|*/
+/*|_______________________________________________________________________________________________|*/
+/*FOOTER*//*FOOTER*//*FOOTER*//*FOOTER*//*FOOTER*//*FOOTER*//*FOOTER*/
+/*FOOTER*//*FOOTER*//*FOOTER*//*FOOTER*//*FOOTER*//*FOOTER*//*FOOTER*/
+/*FOOTER*//*FOOTER*//*FOOTER*//*FOOTER*//*FOOTER*//*FOOTER*//*FOOTER*/
+/*|_______________________________________________________________________________________________|*/
+/*|_______________________________________________________________________________________________|*/
+
+#footer {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 15px 0px 15px 0px;
+}
+
+#footer ul {
+    list-style: none;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+#footer li:hover {
+    cursor: pointer;
+    color: #888888;
+}
+
+#footer input {
+    height: 50px;
+    padding-left: 25px;
+    border: 1px solid #888888;
+    font-size: 15px;
+}
+
+#footer input:hover {
+    border: 1px solid #FF8000;
+}
+
+.subscribe-button {
+    padding: 10px 25px 10px 25px;
+    height: 50px;
+    background-color: #FF8000;
+    text-transform: uppercase;
+    color: white;
+    font-family: 'Avenir';
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.subscribe-button:hover {
+    cursor: pointer;
+    background-color: #CA4700;
+}
