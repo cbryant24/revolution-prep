@@ -3,6 +3,7 @@ $('document').ready(build_courses)
 function build_courses() {
     const course_elements = [];
 
+    //SECTION IS USED FOR THE AJAX REQUEST FOR NODE SERVER ON REVPREP.CHRISBRYANTDEV.COM 
     (() => {
         $.ajax({
             url: '/get-courses',
@@ -12,12 +13,13 @@ function build_courses() {
                 'Content-Type': 'application/json'
             },
             success: (courses) => {
+                debugger
                 courses.forEach(course => {
                     let single_course = {
                         title: course.title,
                         date: new Date(course.startsAt).toString().match(/\s(\w{3}\s\d{2})/)[1],
                         schedule: format_date(course.startsAt),
-                        enroll_url: courses.enrollUrl
+                        enroll_url: course.enrollUrl
                     }
                     course_elements.push(single_course)
                 });
@@ -25,6 +27,20 @@ function build_courses() {
             }
         })
     })()
+
+    // courses.forEach(course => {
+    //     debugger
+    //     let single_course = {
+    //         title: course.title,
+    //         date: new Date(course.startsAt).toString().match(/\s(\w{3}\s\d{2})/)[1],
+    //         schedule: format_date(course.startsAt),
+    //         enroll_url: course.enrollUrl
+    //     }
+    //     course_elements.push(single_course)
+    // });
+
+    add_to_dom()
+
     function add_to_dom() {
         course_elements.forEach( course => {
             const $course_div = $('<div>', {
@@ -50,12 +66,17 @@ function build_courses() {
                 class: 'enroll-button'
             })
 
+
             $course_div.append($course_img);
             $course_div.append($course_date);
             $course_div.append($course_schedule);
             $course_div.append($course_title);
             $course_div.append($enroll_button);
             $('.all-courses').append($course_div);
+            debugger
+            $('.enroll-button').on('click', () => {
+                window.location.replace(course.enroll_url)
+            })
         })
 
     }
@@ -69,5 +90,291 @@ function format_date(date) {
         return `${schedule[1]} ${schedule[2]} ${schedule[3]}`
     }
     return `${schedule[1]} ${schedule[2]}am ${schedule[3]}`
-
 }
+
+
+
+
+
+const courses = [{
+    "id": 2109,
+    "availableForSale": true,
+    "availableForSaleError": null,
+    "createdAt": "2017-08-31T00:31:36-07:00",
+    "deliveredDuration": 0,
+    "duration": 720,
+    "endsAt": "2018-01-21T13:00:00-08:00",
+    "enrollUrl": "//example.com/",
+    "enrollmentCap": 4,
+    "enrollmentsCount": 2,
+    "firstSessionAt": null,
+    "gradeLevel": null,
+    "lastSessionAt": null,
+    "legacyId": 42790,
+    "name": null,
+    "nextStartsAt": "2017-12-03T13:00:00-08:00",
+    "notes": "",
+    "parentUpdateLastSentAt": null,
+    "possibleEvents": [
+        "unpublish",
+        "cancel"
+    ],
+    "provisionedDuration": 0,
+    "remainingProvisionedDuration": 0,
+    "reservationEndsAt": null,
+    "restrictByLeadSource": false,
+    "schedule": [
+        {
+            "name": "Class",
+            "count": 6,
+            "days": [
+                "Sunday at 1:00PM"
+            ],
+            "timeZone": "PST"
+        }
+    ],
+    "startingEpisodeNumber": null,
+    "startsAt": "2017-12-03T13:00:00-08:00",
+    "title": "SAT Yellow Semi-Private Tutoring",
+    "type": "Course",
+    "unscheduledDuration": -720,
+    "updatedAt": "2017-10-16T09:18:55-07:00",
+    "status": "published",
+    "requiresParentUpdate": true,
+    "staffed": true
+},{
+    "id": 13064,
+    "availableForSale": true,
+    "availableForSaleError": null,
+    "createdAt": "2017-08-31T23:40:09-07:00",
+    "deliveredDuration": 0,
+    "duration": 720,
+    "endsAt": "2018-01-07T16:00:00-08:00",
+    "enrollUrl": "//example.com/",
+    "enrollmentCap": 4,
+    "enrollmentsCount": 3,
+    "firstSessionAt": null,
+    "gradeLevel": null,
+    "lastSessionAt": null,
+    "legacyId": 42848,
+    "name": null,
+    "nextStartsAt": "2017-12-03T16:00:00-08:00",
+    "notes": "",
+    "parentUpdateLastSentAt": null,
+    "possibleEvents": [
+        "unpublish",
+        "cancel"
+    ],
+    "provisionedDuration": 0,
+    "remainingProvisionedDuration": 0,
+    "reservationEndsAt": null,
+    "restrictByLeadSource": false,
+    "schedule": [
+        {
+            "name": "Class",
+            "count": 6,
+            "days": [
+                "Sunday at 4:00PM",
+                "Saturday at 4:00PM"
+            ],
+            "timeZone": "PST"
+        }
+    ],
+    "startingEpisodeNumber": null,
+    "startsAt": "2017-12-03T16:00:00-08:00",
+    "title": "SAT Yellow Semi-Private Tutoring",
+    "type": "Course",
+    "unscheduledDuration": -720,
+    "updatedAt": "2017-10-16T09:19:31-07:00",
+    "status": "published",
+    "requiresParentUpdate": true,
+    "staffed": true
+},{
+    "id": 13837,
+    "availableForSale": true,
+    "availableForSaleError": null,
+    "createdAt": "2017-10-11T15:14:29-07:00",
+    "deliveredDuration": 0,
+    "duration": 720,
+    "endsAt": "2018-01-07T16:00:00-08:00",
+    "enrollUrl": "//example.com/",
+    "enrollmentCap": 4,
+    "enrollmentsCount": 2,
+    "firstSessionAt": null,
+    "gradeLevel": null,
+    "lastSessionAt": null,
+    "legacyId": null,
+    "name": null,
+    "nextStartsAt": "2017-12-03T16:00:00-08:00",
+    "notes": null,
+    "parentUpdateLastSentAt": null,
+    "possibleEvents": [
+        "unpublish",
+        "cancel"
+    ],
+    "provisionedDuration": 0,
+    "remainingProvisionedDuration": 0,
+    "reservationEndsAt": null,
+    "restrictByLeadSource": false,
+    "schedule": [
+        {
+            "name": "Class",
+            "count": 6,
+            "days": [
+                "Sunday at 4:00PM",
+                "Saturday at 4:00PM"
+            ],
+            "timeZone": "PST"
+        }
+    ],
+    "startingEpisodeNumber": null,
+    "startsAt": "2017-12-03T16:00:00-08:00",
+    "title": "SAT Yellow Semi-Private Tutoring",
+    "type": "Course",
+    "unscheduledDuration": -720,
+    "updatedAt": "2017-11-07T16:39:05-08:00",
+    "status": "published",
+    "requiresParentUpdate": true,
+    "staffed": true
+},{
+    "id": 13902,
+    "availableForSale": true,
+    "availableForSaleError": null,
+    "createdAt": "2017-10-16T15:28:06-07:00",
+    "deliveredDuration": 0,
+    "duration": 1560,
+    "endsAt": "2018-03-04T08:00:00-08:00",
+    "enrollUrl": "//example.com/",
+    "enrollmentCap": 50,
+    "enrollmentsCount": 0,
+    "firstSessionAt": null,
+    "gradeLevel": null,
+    "lastSessionAt": null,
+    "legacyId": null,
+    "name": null,
+    "nextStartsAt": "2018-01-21T08:00:00-08:00",
+    "notes": "Semi-Private Course Test - School-specific courses.",
+    "parentUpdateLastSentAt": null,
+    "possibleEvents": [
+        "unpublish",
+        "cancel"
+    ],
+    "provisionedDuration": 0,
+    "remainingProvisionedDuration": 0,
+    "reservationEndsAt": null,
+    "restrictByLeadSource": true,
+    "schedule": [
+        {
+            "name": "Class",
+            "count": 13,
+            "days": [
+                "Saturday at 8:00AM",
+                "Sunday at 8:00AM"
+            ],
+            "timeZone": "PST"
+        }
+    ],
+    "startingEpisodeNumber": null,
+    "startsAt": "2018-01-21T08:00:00-08:00",
+    "title": "SAT Semi-Private Tutoring",
+    "type": "Course",
+    "unscheduledDuration": -1560,
+    "updatedAt": "2017-10-17T11:56:23-07:00",
+    "status": "published",
+    "requiresParentUpdate": true,
+    "staffed": false
+},{
+    "id": 13903,
+    "availableForSale": true,
+    "availableForSaleError": null,
+    "createdAt": "2017-10-16T15:32:54-07:00",
+    "deliveredDuration": 0,
+    "duration": 1560,
+    "endsAt": "2018-03-07T16:00:00-08:00",
+    "enrollUrl": "//example.com/",
+    "enrollmentCap": 50,
+    "enrollmentsCount": 0,
+    "firstSessionAt": null,
+    "gradeLevel": null,
+    "lastSessionAt": null,
+    "legacyId": null,
+    "name": null,
+    "nextStartsAt": "2018-01-24T16:00:00-08:00",
+    "notes": "School-specific Semi-Private course test",
+    "parentUpdateLastSentAt": null,
+    "possibleEvents": [
+        "unpublish",
+        "cancel"
+    ],
+    "provisionedDuration": 0,
+    "remainingProvisionedDuration": 0,
+    "reservationEndsAt": null,
+    "restrictByLeadSource": true,
+    "schedule": [
+        {
+            "name": "Class",
+            "count": 13,
+            "days": [
+                "Wednesday at 4:00PM",
+                "Sunday at 12:00PM"
+            ],
+            "timeZone": "PST"
+        }
+    ],
+    "startingEpisodeNumber": null,
+    "startsAt": "2018-01-24T16:00:00-08:00",
+    "title": "SAT Semi-Private Tutoring",
+    "type": "Course",
+    "unscheduledDuration": -1560,
+    "updatedAt": "2017-10-17T11:57:57-07:00",
+    "status": "published",
+    "requiresParentUpdate": true,
+    "staffed": false
+},{
+    "id": 13906,
+    "availableForSale": true,
+    "availableForSaleError": null,
+    "createdAt": "2017-10-16T16:03:10-07:00",
+    "deliveredDuration": 0,
+    "duration": 1560,
+    "endsAt": "2018-03-04T08:00:00-08:00",
+    "enrollUrl": "//example.com/",
+    "enrollmentCap": 50,
+    "enrollmentsCount": 0,
+    "firstSessionAt": null,
+    "gradeLevel": null,
+    "lastSessionAt": null,
+    "legacyId": null,
+    "name": null,
+    "nextStartsAt": "2018-01-21T08:00:00-08:00",
+    "notes": "School-specific semi-private tutoring course",
+    "parentUpdateLastSentAt": null,
+    "possibleEvents": [
+        "unpublish",
+        "cancel"
+    ],
+    "provisionedDuration": 0,
+    "remainingProvisionedDuration": 0,
+    "reservationEndsAt": null,
+    "restrictByLeadSource": true,
+    "schedule": [
+        {
+            "name": "Class",
+            "count": 13,
+            "days": [
+                "Sunday at 8:00AM",
+                "Saturday at 8:00AM"
+            ],
+            "timeZone": "PST"
+        }
+    ],
+    "startingEpisodeNumber": null,
+    "startsAt": "2018-01-21T08:00:00-08:00",
+    "title": "SAT Semi-Private Tutoring",
+    "type": "Course",
+    "unscheduledDuration": -1560,
+    "updatedAt": "2017-10-17T12:40:07-07:00",
+    "status": "published",
+    "requiresParentUpdate": true,
+    "staffed": false
+}]

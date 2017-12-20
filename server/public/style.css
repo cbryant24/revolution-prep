@@ -155,15 +155,6 @@ h3 {
     color: white;
 }
 
-
-/*|_______________________________________________________________________________________________|*/
-/*|_______________________________________________________________________________________________|*/
-/*COURSES*//*COURSES*//*COURSES*//*COURSES*//*COURSES*//*COURSES*//*COURSES*/
-/*COURSES*//*COURSES*//*COURSES*//*COURSES*//*COURSES*//*COURSES*//*COURSES*/
-/*COURSES*//*COURSES*//*COURSES*//*COURSES*//*COURSES*//*COURSES*//*COURSES*/
-/*|_______________________________________________________________________________________________|*/
-/*|_______________________________________________________________________________________________|*/
-
 #courses {
     padding-top: 3%;
     background-color: #E2E3E1;
@@ -223,6 +214,10 @@ h3 {
     font-weight: bold;
     font-size: 15px;
     margin: 5% 0% 0% 25%;
+}
+
+#enroll-button {
+    color: white;
 }
 
 .enroll-button:hover {
