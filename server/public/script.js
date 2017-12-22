@@ -82,7 +82,7 @@ function build_courses() {
 
 function format_date(date) {
     let day_of_week = new Date(date).toString().match(/^\w{3}/)[0]
-    let time_zone = new Date(date).toString().match(/\w+(?=\))/)[0]
+    let time_zone = new Date(date).toLocaleTimeString('en-us',{timeZoneName:'short'}).match(/[a-zA-Z\-]+\d*(?=$)/)[0]
     let time = new Date(date).toLocaleTimeString().match(/(\d{1,2}:\d{2})/)[0]
     let am_pm = new Date(date).toLocaleTimeString().match(/\w{2}(?=$)/)[0]
 
