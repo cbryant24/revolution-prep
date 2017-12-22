@@ -13,7 +13,6 @@ function build_courses() {
                 'Content-Type': 'application/json'
             },
             success: (courses) => {
-                debugger
                 courses.forEach(course => {
                     let single_course = {
                         title: course.title,
@@ -29,7 +28,6 @@ function build_courses() {
     })()
 
     // courses.forEach(course => {
-    //     debugger
     //     let single_course = {
     //         title: course.title,
     //         date: new Date(course.startsAt).toString().match(/\s(\w{3}\s\d{2})/)[1],
@@ -73,7 +71,6 @@ function build_courses() {
             $course_div.append($course_title);
             $course_div.append($enroll_button);
             $('.all-courses').append($course_div);
-            debugger
             $('.enroll-button').on('click', () => {
                 window.location.replace(course.enroll_url)
             })
@@ -84,12 +81,12 @@ function build_courses() {
 }
 
 function format_date(date) {
-    let schedule = new Date(date).toString().match(/(^\w{3}).*\s(\d{2}:\d{2}).*\((\w+)/)
-    if (schedule[2].match(/\d{2}/) >= 13) {
-        schedule[2] = `${(schedule[2].match(/\d{2}/) - 12)}:${schedule[2].match(/\d{2}(?=$)/)}pm`
-        return `${schedule[1]} ${schedule[2]} ${schedule[3]}`
-    }
-    return `${schedule[1]} ${schedule[2]}am ${schedule[3]}`
+    let day_of_week = new Date(date).toString().match(/^\w{3}/)[0]
+    let time_zone = new Date(date).toString().match(/\w+(?=\))/)[0]
+    let time = new Date(date).toLocaleTimeString().match(/(\d{1,2}:\d{2})/)[0]
+    let am_pm = new Date(date).toLocaleTimeString().match(/\w{2}(?=$)/)[0]
+
+    return `${day_of_week} ${time}${am_pm} ${time_zone} `
 }
 
 
