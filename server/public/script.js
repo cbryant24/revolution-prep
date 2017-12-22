@@ -13,7 +13,6 @@ function build_courses() {
                 'Content-Type': 'application/json'
             },
             success: (courses) => {
-                debugger
                 courses.forEach(course => {
                     let single_course = {
                         title: course.title,
@@ -73,7 +72,6 @@ function build_courses() {
             $course_div.append($course_title);
             $course_div.append($enroll_button);
             $('.all-courses').append($course_div);
-            debugger
             $('.enroll-button').on('click', () => {
                 window.location.replace(course.enroll_url)
             })
